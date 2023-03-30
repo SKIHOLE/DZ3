@@ -12,7 +12,7 @@ namespace DZ3._2
             Pupil pupil3 = new GoodPupil();
             Pupil pupil4 = new BadPupil();
             Pupil pupil5 = new BadPupil();
-            ClassRoom Clas = new ClassRoom(pupil1, pupil2, pupil3, pupil4, pupil5);
+            ClassRoom Clas = new ClassRoom(pupil1, pupil2, pupil3,pupil4);
             Clas.Study();
             Clas.Read();
             Clas.Write();
@@ -26,9 +26,29 @@ namespace DZ3._2
          Pupil[] pupils;
         
 
-        public ClassRoom(params Pupil[] pupils)
+        public ClassRoom(Pupil pupil1, Pupil pupil2, Pupil pupil3)
         {
-            this.pupils = pupils;
+            pupils = new Pupil[3];
+            pupils[0] = pupil1;
+            pupils[1] = pupil2;
+            pupils[2] = pupil3;
+        }
+        public ClassRoom(Pupil pupil1, Pupil pupil2, Pupil pupil3, Pupil pupil4)
+        {
+            pupils = new Pupil[4];
+            pupils[0] = pupil1;
+            pupils[1] = pupil2;
+            pupils[2] = pupil3;
+            pupils[3] = pupil4;
+        }
+        public ClassRoom(Pupil pupil1, Pupil pupil2, Pupil pupil3, Pupil pupil4, Pupil pupil5)
+        {
+            pupils = new Pupil[5];
+            pupils[0] = pupil1;
+            pupils[1] = pupil2;
+            pupils[2] = pupil3;
+            pupils[3] = pupil4;
+            pupils[4] = pupil5;
         }
 
         public void Study()
@@ -95,19 +115,19 @@ namespace DZ3._2
     {
         public override void Study()
         {
-            Console.WriteLine("Studies consistently and effectively");
+            Console.WriteLine("Studies diligently and thoroughly");
         }
         public override void Read()
         {
-            Console.WriteLine("Reads regularly and has a good understanding of the material");
+            Console.WriteLine("Reads a variety of materials and demonstrates excellent comprehension");
         }
         public override void Write()
         {
-            Console.WriteLine("Writes competently and clearly");
+            Console.WriteLine("Writes well-structured, clear, and compelling pieces");
         }
         public override void Relax()
         {
-            Console.WriteLine("Relaxes enough to recharge, but does not let leisure time interfere with studies");
+            Console.WriteLine("Relaxes in moderation, balancing leisure with academic responsibilities");
         }
     }
     class GoodPupil : Pupil
